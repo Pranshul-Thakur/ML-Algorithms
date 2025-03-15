@@ -16,21 +16,11 @@ def variance(val):
     val_mean = mean(val)
     return sum((x - val_mean) ** 2 for x in val) / len(val)
 
-def thresh(val, penalty):
-    if val > penalty:
-        return val - penalty
-    elif val < -penalty:
-        return val + penalty
-    else:
-        return 0
-    
-m1 = covariance(x,y) / variance(x)
-m = thresh(m1, penalty)
-# m = covariance(x, y) / (variance(x) + penalty * np.sum(np.square(x)))
+m = covariance(x, y) / (variance(x) + penalty * np.sum(np.abs(x)))
 b = mean(y) - m * mean(x)
 
 def predict(x_new):
     return b + m * x_new
 
-x_test = 9
+x_test = 5
 print(predict(x_test))
