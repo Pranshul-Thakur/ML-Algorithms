@@ -3,9 +3,6 @@ import numpy as np
 x = np.array([[1, 2], [2, 3], [3, 1], [5, 4], [4, 5]])
 y = np.array([[0], [0], [0], [1], [1]])
 
-def mean(val):
-    return sum(val) / len(val)
-
 
 def sigmoid(val):
     return 1 / (1 + np.exp( -val))
@@ -44,4 +41,4 @@ def threshold(x, w, b, thresh = 0.5):
 w, b = train_gd(x, y, learning_rate = 0.01, epochs = 1000)
 prediction = threshold(x, w, b)
 
-print(prediction)
+print(prediction.flatten())
