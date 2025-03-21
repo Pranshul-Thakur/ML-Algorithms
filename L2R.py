@@ -24,9 +24,9 @@ def thresh(val, penalty):
     else:
         return 0
     
-m1 = covariance(x,y) / variance(x)
-m = thresh(m1, penalty)
-# m = covariance(x, y) / (variance(x) + penalty * np.sum(np.square(x)))
+# m1 = covariance(x,y) / variance(x)
+# m = thresh(m1, penalty)
+m = covariance(x, y) / (variance(x) + penalty * np.sum(np.square(x)))
 b = mean(y) - m * mean(x)
 
 def predict(x_new):
