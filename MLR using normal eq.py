@@ -9,4 +9,4 @@ theta = np.linalg.pinv(b.T @ b) @ b.T @ y
 
 y_pred = b @ theta
 
-print(y_pred)    
+print(y_pred)
