@@ -9,6 +9,7 @@ def mean(val):
     return sum(val) / len(val)
 
 def covariance(x, y):
+    
     x_mean, y_mean = mean(x), mean(y)
     return sum((x[i] - x_mean) * (y[i] - y_mean) for i in range (len(x)))
 
